@@ -31,7 +31,42 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        body: StartPage()
+      ),
+    );
+  }
+}
+
+class StartPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(30),
+          margin: const EdgeInsets.all(30),
+          color: Colors.amberAccent,
+          child: Image(
+              image: AssetImage('images/test_hero.png'),
+              fit: BoxFit.cover,
+            )
+        ),
+        Container(
+          padding: const EdgeInsets.all(30),
+          margin: const EdgeInsets.all(30),
+          color: Colors.amber,
+          child: Text(
+            'God saves the Queen God saves the Queen God saves the Queen God saves the Queen God saves the Queen God saves the Queen God saves the' 
+            'QueenGod saves the Queen',
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: 15.0, 
+            ),
+          )
+        )
+      ]
     );
   }
 }
