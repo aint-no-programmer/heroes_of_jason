@@ -45,25 +45,37 @@ class StartPage extends StatelessWidget{
       children: [
         Container(
           padding: const EdgeInsets.all(30),
-          margin: const EdgeInsets.all(30),
-          color: Colors.amberAccent,
+          // margin: const EdgeInsets.all(30),
+          // color: Colors.amberAccent,  
           child: Image(
               image: AssetImage('images/test_hero.png'),
               fit: BoxFit.cover,
             )
         ),
-        Container(
-          padding: const EdgeInsets.all(30),
-          margin: const EdgeInsets.all(30),
-          color: Colors.amber,
-          child: Text(
-            'God saves the Queen God saves the Queen God saves the Queen God saves the Queen God saves the Queen God saves the Queen God saves the' 
-            'QueenGod saves the Queen',
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: 15.0, 
-            ),
+        Flexible(
+          child: SingleChildScrollView( 
+            child: Container(
+              padding: const EdgeInsets.all(30),
+              // margin: const EdgeInsets.all(30),
+              color: Colors.amber,
+              child: Text(
+                'This is a long piece of text that will be scrollable. Lorem ipsum dolor sit amet, consectetur adipiscing'
+                ' elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
+                'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
+                'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
+                'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
+                'elitorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et '
+                'dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
+                'commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla'
+                ' pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est'
+                ' laborum.',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 20.0, 
+                ),
+              )
+            )
           )
         )
       ]
