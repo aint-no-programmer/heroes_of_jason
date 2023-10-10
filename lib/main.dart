@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'ChooseHeroPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: StartPage()
+        body: ChooseHeroPage()
       ),
     );
   }
