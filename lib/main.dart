@@ -32,55 +32,47 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        body: ChooseHeroPage()
-      ),
+      home: Scaffold(body: ChooseHeroPage()),
     );
   }
 }
 
-class StartPage extends StatelessWidget{
+class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
+    return Column(children: [
+      Container(
           padding: const EdgeInsets.all(30),
           // margin: const EdgeInsets.all(30),
-          // color: Colors.amberAccent,  
+          // color: Colors.amberAccent,
           child: Image(
-              image: AssetImage('images/test_hero.png'),
-              fit: BoxFit.cover,
-            )
-        ),
-        Flexible(
-          child: SingleChildScrollView( 
-            child: Container(
-              padding: const EdgeInsets.all(30),
-              // margin: const EdgeInsets.all(30),
-              color: Colors.amber,
-              child: Text(
-                'This is a long piece of text that will be scrollable. Lorem ipsum dolor sit amet, consectetur adipiscing'
-                ' elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
-                'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
-                'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
-                'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
-                'elitorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et '
-                'dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
-                'commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla'
-                ' pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est'
-                ' laborum.',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 20.0, 
-                ),
-              )
-            )
-          )
-        )
-      ]
-    );
+            image: AssetImage('images/test_hero.png'),
+            fit: BoxFit.cover,
+          )),
+      Flexible(
+          child: SingleChildScrollView(
+              child: Container(
+                  padding: const EdgeInsets.all(30),
+                  // margin: const EdgeInsets.all(30),
+                  color: Colors.amber,
+                  child: Text(
+                    'This is a long piece of text that will be scrollable. Lorem ipsum dolor sit amet, consectetur adipiscing'
+                    ' elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
+                    'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
+                    'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
+                    'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
+                    'elitorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et '
+                    'dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
+                    'commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla'
+                    ' pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est'
+                    ' laborum.',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 20.0,
+                    ),
+                  ))))
+    ]);
   }
 }
 
