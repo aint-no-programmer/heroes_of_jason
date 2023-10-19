@@ -5,11 +5,17 @@ class HeroPage extends StatelessWidget {
   HeroPage({
     super.key,
     required this.icon,
+    required this.hero_name
   });
   final String icon;
+  final String hero_name;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text("Concrete hero: $hero_name"),
+          centerTitle: true,
+        ),
         body: Hero(
             tag: icon,
             child: Column(children: [
@@ -54,9 +60,11 @@ class ConcreteHero extends StatelessWidget {
     required this.icon,
     this.onTap,
     required this.width,
+    required this.hero_name 
   });
 
   final String icon;
+  final hero_name;
   final VoidCallback? onTap;
   final double width;
 
@@ -77,7 +85,7 @@ class ConcreteHero extends StatelessWidget {
                     return AnimatedBuilder(
                       animation: animation,
                       builder: (context, child) {
-                        return HeroPage(icon: icon);
+                        return HeroPage(icon: icon, hero_name: hero_name,);
                       },
                     );
                   },
