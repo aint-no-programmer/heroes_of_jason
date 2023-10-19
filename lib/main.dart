@@ -32,7 +32,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(body: ChooseHeroPage()),
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Basic Hero Animation Demo'),
+          ),
+          body: ChooseHeroPage()),
     );
   }
 }
