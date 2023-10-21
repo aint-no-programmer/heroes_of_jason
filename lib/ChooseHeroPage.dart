@@ -3,8 +3,8 @@ import 'ConcreteHero.dart';
 
 List<StatelessWidget> getListOfHeroes() {
   return [
-    ConcreteHero(icon: 'images/test_hero.png', width: 100, hero_name: "Rib",),
-    ConcreteHero(icon: 'images/test_hero_2.png', width: 100, hero_name: "ПВВ",),
+    ConcreteHero(icon: 'images/test_hero.png', width: 100, heroName: "Rib",),
+    ConcreteHero(icon: 'images/test_hero_2.png', width: 100, heroName: "ПВВ",),
   ];
 }
 
