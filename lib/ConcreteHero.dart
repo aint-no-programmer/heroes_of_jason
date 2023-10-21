@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart' show timeDilation;
 import 'HeroPage.dart';
 
 class ConcreteHero extends StatelessWidget {
