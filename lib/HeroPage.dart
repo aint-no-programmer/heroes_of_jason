@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
+import 'package:heroes_of_jason/OraclePage.dart';
 
 class HeroPage extends StatelessWidget {
   HeroPage({super.key, required this.icon, required this.heroName});
@@ -24,7 +25,20 @@ class HeroPage extends StatelessWidget {
               child: Material(
                 color: Colors.transparent,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      PageRouteBuilder<void>(
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return AnimatedBuilder(
+                            animation: animation,
+                            builder: (context, child) {
+                              return OraclePage();
+                            },
+                          );
+                        },
+                      ),
+                    );
+                  },
                   child: Image(
                     image: AssetImage(icon),
                     fit: BoxFit.cover,
