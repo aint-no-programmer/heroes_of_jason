@@ -1,8 +1,20 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-class OraclePage extends StatelessWidget {
-  // OraclePage({this.prophecy});
-  String prophecy = "";
+class OraclePage extends StatefulWidget {
+  OraclePage({super.key, required this.prophecies});
+  final List<String> prophecies;
+  @override
+  State<OraclePage> createState() => OraclePageState();
+}
+
+class OraclePageState extends State<OraclePage>
+{
+  String getRandomProphecy(){
+    return widget.prophecies[Random().nextInt(widget.prophecies.length)];
+  }
+  String prophecy = 't a p';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,18 +26,9 @@ class OraclePage extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: () {
-            // Navigator.of(context).push(
-            //   PageRouteBuilder<void>(
-            //     pageBuilder: (context, animation, secondaryAnimation) {
-            //       return AnimatedBuilder(
-            //         animation: animation,
-            //         builder: (context, child) {
-            //           return OraclePage();
-            //         },
-            //       );
-            //     },
-            //   ),
-            // );
+            setState(() {
+              prophecy = getRandomProphecy();
+            });
           },
           child: Center(
             child: Container(
@@ -42,19 +45,6 @@ class OraclePage extends StatelessWidget {
           ),
         ),
       ),
-      // body: Center(
-      //   child: Card(
-      //     color: Colors.white,
-      //     child: Text(
-      //       'word',
-      //       textAlign: TextAlign.center,
-      //       style: TextStyle(
-      //         fontWeight: FontWeight.normal,
-      //         fontSize: 20.0,
-      //       ),
-      //     ),
-      //   ),
-      // ),
     );
   }
 }

@@ -32,7 +32,7 @@ class HeroPage extends StatelessWidget {
                           return AnimatedBuilder(
                             animation: animation,
                             builder: (context, child) {
-                              return OraclePage();
+                              return OraclePage(prophecies: ['1', '2', '3', '4']);
                             },
                           );
                         },
