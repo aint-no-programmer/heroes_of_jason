@@ -9,12 +9,13 @@ class OraclePage extends StatefulWidget {
   State<OraclePage> createState() => OraclePageState();
 }
 
-class OraclePageState extends State<OraclePage>
-{
-  String getRandomProphecy(){
+class OraclePageState extends State<OraclePage> {
+  String getRandomProphecy() {
     return widget.prophecies[Random().nextInt(widget.prophecies.length)];
   }
+
   String prophecy = 't a p';
+  bool _visible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +28,7 @@ class OraclePageState extends State<OraclePage>
         child: InkWell(
           onTap: () {
             setState(() {
-              prophecy = getRandomProphecy();
+              _visible = false;
             });
           },
           child: Center(
@@ -40,7 +41,18 @@ class OraclePageState extends State<OraclePage>
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),
-              child: Text(prophecy),
+              child: AnimatedOpacity(
+                opacity: _visible ? 1.0 : 0.0,
+                curve: Curves.ease,
+                duration: const Duration(milliseconds: 2000),
+                child: Text(prophecy),
+                onEnd: () {
+                  setState(() {
+                    if (!_visible) prophecy = getRandomProphecy();
+                    _visible = true;
+                  });
+                },
+              ),
             ),
           ),
         ),
