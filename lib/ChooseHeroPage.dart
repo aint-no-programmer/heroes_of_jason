@@ -3,8 +3,8 @@ import 'ConcreteHero.dart';
 
 List<StatelessWidget> getListOfHeroes() {
   return [
-    ConcreteHero(icon: 'images/test_hero.png', width: 100, heroName: "Rib",),
-    ConcreteHero(icon: 'images/test_hero_2.png', width: 100, heroName: "ПВВ",),
+    ConcreteHero(icon: 'images/test_hero.png', width: 100, heroName: "Ильяс",),
+    ConcreteHero(icon: 'images/test_hero_2.png', width: 100, heroName: "Святозавр",),
   ];
 }
 
@@ -18,8 +18,8 @@ class ChooseHeroPage extends StatelessWidget {
       ),
       body: GridView.count(
         crossAxisCount: 3,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 10,
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
         children: getListOfHeroes(),
       ),
     );
