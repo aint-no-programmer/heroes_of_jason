@@ -25,33 +25,41 @@ class OraclePageState extends State<OraclePage> {
       ),
       body: Material(
         color: Colors.transparent,
-        child: InkWell(
-          onTap: () {
-            setState(() {
-              _visible = false;
-            });
-          },
-          child: Center(
-            child: Container(
-              margin: EdgeInsets.all(30),
-              padding: EdgeInsets.all(100),
-              decoration: BoxDecoration(
-                // border: Border.all(),
-                // borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-                shape: BoxShape.circle,
-              ),
-              child: AnimatedOpacity(
-                opacity: _visible ? 1.0 : 0.0,
-                curve: Curves.ease,
-                duration: const Duration(milliseconds: 2000),
-                child: Text(prophecy),
-                onEnd: () {
-                  setState(() {
-                    if (!_visible) prophecy = getRandomProphecy();
-                    _visible = true;
-                  });
-                },
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/background.jfif'),
+              fit: BoxFit.fill,
+            ),
+          ),
+          child: InkWell(
+            onTap: () {
+              setState(() {
+                _visible = false;
+              });
+            },
+            child: Center(
+              child: Container(
+                decoration: BoxDecoration(
+                  // border: Border.all(),
+                  // borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                ),
+                margin: EdgeInsets.all(30),
+                padding: EdgeInsets.all(100),
+                child: AnimatedOpacity(
+                  opacity: _visible ? 1.0 : 0.0,
+                  curve: Curves.ease,
+                  duration: const Duration(milliseconds: 2000),
+                  child: Text(prophecy),
+                  onEnd: () {
+                    setState(() {
+                      if (!_visible) prophecy = getRandomProphecy();
+                      _visible = true;
+                    });
+                  },
+                ),
               ),
             ),
           ),
