@@ -28,7 +28,7 @@ class OraclePageState extends State<OraclePage> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/background.jfif'),
+              image: AssetImage('images/main_background.jpg'),
               fit: BoxFit.fill,
             ),
           ),

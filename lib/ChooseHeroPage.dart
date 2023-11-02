@@ -3,8 +3,31 @@ import 'ConcreteHero.dart';
 
 List<StatelessWidget> getListOfHeroes() {
   return [
-    ConcreteHero(icon: 'images/test_hero.png', width: 100, heroName: "Ильяс",),
-    ConcreteHero(icon: 'images/test_hero_2.png', width: 100, heroName: "Святозавр",),
+    ConcreteHero(
+      icon: 'images/hero_1.png',
+      width: 100,
+      heroName: "Ильяс",
+    ),
+    ConcreteHero(
+      icon: 'images/hero_2.png',
+      width: 100,
+      heroName: "Святозавр",
+    ),
+    ConcreteHero(
+      icon: 'images/hero_3.png',
+      width: 100,
+      heroName: "Макс",
+    ),
+    ConcreteHero(
+      icon: 'images/hero_4.png',
+      width: 100,
+      heroName: "Леонид",
+    ),
+    ConcreteHero(
+      icon: 'images/hero_5.png',
+      width: 100,
+      heroName: "Шэгги",
+    ),
   ];
 }
 
@@ -16,11 +39,19 @@ class ChooseHeroPage extends StatelessWidget {
         centerTitle: true,
         title: Text("Choose your her0"),
       ),
-      body: GridView.count(
-        crossAxisCount: 3,
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 8,
-        children: getListOfHeroes(),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/main_background.jpg'),
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: GridView.count(
+          crossAxisCount: 3,
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 8,
+          children: getListOfHeroes(),
+        ),
       ),
     );
   }
