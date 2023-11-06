@@ -56,12 +56,19 @@ class ConcreteHero extends StatelessWidget {
             child: Column(
               children: [
                 Flexible(
-                  child: ClipOval(
-                  // child: SizedBox.fromSize(
+                  // child: ClipOval(
+                    // child: SizedBox.fromSize(
                     // size: Size.fromRadius(48), // Image radius
-                    child: Image.asset(icon, fit: BoxFit.cover),
-                    // ),
-                  ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          fit: BoxFit.contain,
+                          image: AssetImage(icon),
+                        ),
+                      ),
+                    ),
+                  // ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
@@ -74,16 +81,16 @@ class ConcreteHero extends StatelessWidget {
                           textStyle: colorizeTextStyle,
                           colors: colorizeColors,
                         ),
-                        // ColorizeAnimatedText(
-                        //   'Bill Gates',
-                        //   textStyle: colorizeTextStyle,
-                        //   colors: colorizeColors,
-                        // ),
-                        // ColorizeAnimatedText(
-                        //   'Steve Jobs',
-                        //   textStyle: colorizeTextStyle,
-                        //   colors: colorizeColors,
-                        // ),
+                        ColorizeAnimatedText(
+                          'Кадыровец',
+                          textStyle: colorizeTextStyle,
+                          colors: colorizeColors,
+                        ),
+                        ColorizeAnimatedText(
+                          'Росомаха',
+                          textStyle: colorizeTextStyle,
+                          colors: colorizeColors,
+                        ),
                       ],
                       isRepeatingAnimation: true,
                     ),
