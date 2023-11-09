@@ -35,7 +35,7 @@ class HeroPage extends StatelessWidget {
                               animation: animation,
                               builder: (context, child) {
                                 return OraclePage(
-                                    prophecies: ['1', '2', '3', '4']);
+                                    prophecies: ['some prophecy', 'another prophecy', 'you are so cute', 'please dont touch me']);
                               },
                             );
                           },

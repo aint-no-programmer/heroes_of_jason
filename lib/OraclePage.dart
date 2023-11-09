@@ -51,7 +51,7 @@ class OraclePageState extends State<OraclePage> {
                 child: AnimatedOpacity(
                   opacity: _visible ? 1.0 : 0.0,
                   curve: Curves.ease,
-                  duration: const Duration(milliseconds: 2000),
+                  duration: const Duration(milliseconds: 1000),
                   child: Text(prophecy),
                   onEnd: () {
                     setState(() {

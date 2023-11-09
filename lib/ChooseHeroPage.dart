@@ -48,8 +48,8 @@ class ChooseHeroPage extends StatelessWidget {
         ),
         child: GridView.count(
           crossAxisCount: 3,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
+          mainAxisSpacing: 40,
+          // crossAxisSpacing: 0,
           children: getListOfHeroes(),
         ),
       ),
