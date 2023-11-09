@@ -56,43 +56,33 @@ class ConcreteHero extends StatelessWidget {
             child: Column(
               children: [
                 Flexible(
-                  // child: ClipOval(
-                    // child: SizedBox.fromSize(
-                    // size: Size.fromRadius(48), // Image radius
-                    child: Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          fit: BoxFit.contain,
-                          image: AssetImage(icon),
-                        ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.contain,
+                        image: AssetImage(icon),
                       ),
                     ),
+                  ),
                   // ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: SizedBox(
                     // width: 250.0,
-                    child: AnimatedTextKit(
-                      animatedTexts: [
-                        ColorizeAnimatedText(
-                          heroName,
-                          textStyle: colorizeTextStyle,
-                          colors: colorizeColors,
-                        ),
-                        ColorizeAnimatedText(
-                          'Кадыровец',
-                          textStyle: colorizeTextStyle,
-                          colors: colorizeColors,
-                        ),
-                        ColorizeAnimatedText(
-                          'Росомаха',
-                          textStyle: colorizeTextStyle,
-                          colors: colorizeColors,
-                        ),
-                      ],
-                      isRepeatingAnimation: true,
+                    child: Container(
+                      color: Colors.white,
+                      child: AnimatedTextKit(
+                        animatedTexts: [
+                          ColorizeAnimatedText(
+                            heroName,
+                            textStyle: colorizeTextStyle,
+                            colors: colorizeColors,
+                          ),
+                        ],
+                        isRepeatingAnimation: true,
+                      ),
                     ),
                   ),
                 ),

@@ -18,30 +18,34 @@ class HeroPage extends StatelessWidget {
         tag: icon,
         child: Column(
           children: [
-            Container(
-              padding: const EdgeInsets.all(30),
-              // margin: const EdgeInsets.all(30),
-              // color: Colors.amberAccent,
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      PageRouteBuilder<void>(
-                        pageBuilder: (context, animation, secondaryAnimation) {
-                          return AnimatedBuilder(
-                            animation: animation,
-                            builder: (context, child) {
-                              return OraclePage(prophecies: ['1', '2', '3', '4']);
-                            },
-                          );
-                        },
-                      ),
-                    );
-                  },
-                  child: Image(
-                    image: AssetImage(icon),
-                    fit: BoxFit.cover,
+            Flexible(
+              child: Container(
+                padding: const EdgeInsets.all(30),
+                // margin: const EdgeInsets.all(30),
+                // color: Colors.amberAccent,
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        PageRouteBuilder<void>(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) {
+                            return AnimatedBuilder(
+                              animation: animation,
+                              builder: (context, child) {
+                                return OraclePage(
+                                    prophecies: ['1', '2', '3', '4']);
+                              },
+                            );
+                          },
+                        ),
+                      );
+                    },
+                    child: Image(
+                      image: AssetImage(icon),
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ),
