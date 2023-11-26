@@ -1,5 +1,5 @@
 import 'dart:math';
-
+import 'package:shake/shake.dart';
 import 'package:flutter/material.dart';
 
 class OraclePageAnimation extends StatefulWidget {
@@ -10,6 +10,28 @@ class OraclePageAnimation extends StatefulWidget {
 }
 
 class OraclePageAnimationState extends State<OraclePageAnimation> {
+  ShakeDetector? detector;
+  OraclePageAnimationState(){
+    detector = ShakeDetector.autoStart(
+      onPhoneShake: () {
+          setState(() {
+            _visible = false;
+          });
+        // ScaffoldMessenger.of(context).showSnackBar(
+        //   const SnackBar(
+        //     content: Text('Shake!'),
+        //   ),
+        // );
+        // Do stuff on phone shake
+      },
+      minimumShakeCount: 1,
+      shakeSlopTimeMS: 500,
+      shakeCountResetTime: 3000,
+      shakeThresholdGravity: 2.7,
+    );
+
+    detector?.startListening();
+  }
   String getRandomProphecy() {
     return widget.prophecies[Random().nextInt(widget.prophecies.length)];
   }
@@ -35,14 +57,14 @@ class OraclePageAnimationState extends State<OraclePageAnimation> {
           ),
           child: InkWell(
             onTap: () {
-              setState(() {
-                _visible = false;
-              });
+              // setState(() {
+              //   _visible = false;
+              // });
             },
             onLongPress: () {
-              setState(() {
-                _longpress = true;
-              });
+              // setState(() {
+              //   _longpress = true;
+              // });
             },
             child: Center(
               child: AnimatedContainer(
@@ -51,8 +73,8 @@ class OraclePageAnimationState extends State<OraclePageAnimation> {
                 decoration: BoxDecoration(
                   // border: Border.all(),
                   // borderRadius: BorderRadius.circular(10),
-                  color: _visible? Colors.red : Colors.white,
-                  shape: _visible? BoxShape.rectangle : BoxShape.circle,
+                  color: Colors.white,
+                  shape: BoxShape.circle,
                 ),
                 margin: EdgeInsets.all(30),
                 padding: EdgeInsets.all(100),
