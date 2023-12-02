@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'ChooseHeroPage.dart';
+import 'OraclePageAnimation.dart';
 
 void main() {
   runApp(const MyApp());
