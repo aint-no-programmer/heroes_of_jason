@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'ChooseHeroPage.dart';
+import 'OraclePageAnimation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ChooseHeroPage(),
+      home: OraclePageAnimation(
+        prophecies: ['some prophecy', 'another prophecy', 'you are so cute', 'please dont touch me'],
+      ),
     );
   }
 }

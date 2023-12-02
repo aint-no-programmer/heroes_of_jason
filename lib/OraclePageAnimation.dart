@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:shake/shake.dart';
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 
 class OraclePageAnimation extends StatefulWidget {
   OraclePageAnimation({super.key, required this.prophecies});
@@ -11,23 +12,27 @@ class OraclePageAnimation extends StatefulWidget {
 
 class OraclePageAnimationState extends State<OraclePageAnimation> {
   ShakeDetector? detector;
+  Future<bool?> get hasVibrator async => await Vibration.hasVibrator();
+  Future<bool?> get hasAmplitudeControl async => await Vibration.hasAmplitudeControl();
   OraclePageAnimationState(){
     detector = ShakeDetector.autoStart(
-      onPhoneShake: () {
+      onPhoneShake: () async {
+           if (await hasVibrator?? false) {
+            if (await hasAmplitudeControl?? false) {
+              Vibration.vibrate(amplitude: 128);
+            }
+            else{
+              Vibration.vibrate();
+            }
+           }
           setState(() {
             _visible = false;
           });
-        // ScaffoldMessenger.of(context).showSnackBar(
-        //   const SnackBar(
-        //     content: Text('Shake!'),
-        //   ),
-        // );
-        // Do stuff on phone shake
       },
-      minimumShakeCount: 1,
+      minimumShakeCount: 2,
       shakeSlopTimeMS: 500,
-      shakeCountResetTime: 3000,
-      shakeThresholdGravity: 2.7,
+      shakeCountResetTime: 1000,
+      shakeThresholdGravity: 3.7,
     );
 
     detector?.startListening();
@@ -38,7 +43,6 @@ class OraclePageAnimationState extends State<OraclePageAnimation> {
 
   String prophecy = 't a p';
   bool _visible = true;
-  bool _longpress = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,13 +61,9 @@ class OraclePageAnimationState extends State<OraclePageAnimation> {
           ),
           child: InkWell(
             onTap: () {
+              //now empty - move this logic to shaker
               // setState(() {
               //   _visible = false;
-              // });
-            },
-            onLongPress: () {
-              // setState(() {
-              //   _longpress = true;
               // });
             },
             child: Center(
@@ -87,6 +87,7 @@ class OraclePageAnimationState extends State<OraclePageAnimation> {
                     setState(() {
                       if (!_visible) prophecy = getRandomProphecy();
                       _visible = true;
+                      Vibration.cancel();
                     });
                   },
                 ),
