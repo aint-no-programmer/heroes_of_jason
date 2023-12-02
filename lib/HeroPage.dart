@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
-import 'package:heroes_of_jason/OraclePage.dart';
+import 'package:heroes_of_jason/OraclePageAnimation.dart';
 
 class HeroPage extends StatelessWidget {
   HeroPage({super.key, required this.icon, required this.heroName});
@@ -34,7 +34,7 @@ class HeroPage extends StatelessWidget {
                             return AnimatedBuilder(
                               animation: animation,
                               builder: (context, child) {
-                                return OraclePage(
+                                return OraclePageAnimation(
                                     prophecies: ['some prophecy', 'another prophecy', 'you are so cute', 'please dont touch me']);
                               },
                             );

@@ -11,37 +11,40 @@ class OraclePageAnimation extends StatefulWidget {
 }
 
 class OraclePageAnimationState extends State<OraclePageAnimation> {
-  ShakeDetector? detector;
+  ShakeDetector? _detector;
   Future<bool?> get hasVibrator async => await Vibration.hasVibrator();
   Future<bool?> get hasAmplitudeControl async => await Vibration.hasAmplitudeControl();
   OraclePageAnimationState(){
-    detector = ShakeDetector.autoStart(
+    _detector = ShakeDetector.autoStart(
       onPhoneShake: () async {
-           if (await hasVibrator?? false) {
-            if (await hasAmplitudeControl?? false) {
-              Vibration.vibrate(amplitude: 128);
-            }
-            else{
-              Vibration.vibrate();
-            }
-           }
-          setState(() {
-            _visible = false;
-          });
+        if (await hasVibrator?? false) {
+          if (await hasAmplitudeControl?? false) {
+            Vibration.vibrate(amplitude: 128);
+          }
+          else{
+            Vibration.vibrate();
+          }
+        }
+        setState(() {
+          _visible = false;
+        });
       },
       minimumShakeCount: 2,
       shakeSlopTimeMS: 500,
       shakeCountResetTime: 1000,
       shakeThresholdGravity: 3.7,
     );
-
-    detector?.startListening();
+  }
+  @override
+  void dispose() {
+    _detector?.stopListening();
+    super.dispose();
   }
   String getRandomProphecy() {
     return widget.prophecies[Random().nextInt(widget.prophecies.length)];
   }
 
-  String prophecy = 't a p';
+  String prophecy = 's h a k e  m e.';
   bool _visible = true;
   @override
   Widget build(BuildContext context) {

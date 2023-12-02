@@ -34,9 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: OraclePageAnimation(
-        prophecies: ['some prophecy', 'another prophecy', 'you are so cute', 'please dont touch me'],
-      ),
+      home: ChooseHeroPage(),
     );
   }
 }
