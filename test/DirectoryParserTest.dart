@@ -10,6 +10,7 @@ import 'package:heroes_of_jason/DirectoryParser.dart';
 
 void main() {
     testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    getAssetFiles();
     var dir = await getDirectory();
     print('Working directory is $dir');
     saveFile();
