@@ -3,9 +3,11 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:heroes_of_jason/OraclePageAnimation.dart';
 
 class HeroPage extends StatelessWidget {
-  HeroPage({super.key, required this.icon, required this.heroName});
+  HeroPage({super.key, required this.icon, required this.heroName, required this.description, required this.prophecies});
   final String icon;
   final String heroName;
+  final String description;
+  final List<String> prophecies;
   @override
   Widget build(BuildContext context) {
     timeDilation = 3;
@@ -35,7 +37,7 @@ class HeroPage extends StatelessWidget {
                               animation: animation,
                               builder: (context, child) {
                                 return OraclePageAnimation(
-                                    prophecies: ['some prophecy', 'another prophecy', 'you are so cute', 'please dont touch me']);
+                                    prophecies: prophecies);
                               },
                             );
                           },
@@ -58,16 +60,7 @@ class HeroPage extends StatelessWidget {
                     // margin: const EdgeInsets.all(30),
                     color: Colors.amber,
                     child: Text(
-                      'This is a long piece of text that will be scrollable. Lorem ipsum dolor sit amet, consectetur adipiscing'
-                      ' elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
-                      'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
-                      'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
-                      'elitorem ipsum dolor sit amet, consectetur adipiscing elitorem ipsum dolor sit amet, consectetur adipiscing '
-                      'elitorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et '
-                      'dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
-                      'commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla'
-                      ' pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est'
-                      ' laborum.',
+                      description,
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontWeight: FontWeight.normal,

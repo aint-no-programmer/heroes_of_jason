@@ -8,10 +8,14 @@ class ConcreteHero extends StatelessWidget {
       required this.icon,
       this.onTap,
       required this.width,
-      required this.heroName});
+      required this.heroName,
+      required this.description,
+      required this.prophecies});
 
   final String icon;
   final String heroName;
+  final String description;
+  final List<String> prophecies;
   final VoidCallback? onTap;
   final double width;
 
@@ -46,6 +50,8 @@ class ConcreteHero extends StatelessWidget {
                         return HeroPage(
                           icon: icon,
                           heroName: heroName,
+                          description: description,
+                          prophecies: prophecies
                         );
                       },
                     );

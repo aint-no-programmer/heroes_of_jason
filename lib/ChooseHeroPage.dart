@@ -1,37 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:heroes_of_jason/DirectoryParser.dart';
 import 'ConcreteHero.dart';
 
-List<StatelessWidget> getListOfHeroes() {
-  return [
-    ConcreteHero(
-      icon: 'images/hero_1.png',
-      width: 100,
-      heroName: "Ильяс",
-    ),
-    ConcreteHero(
-      icon: 'images/hero_2.png',
-      width: 100,
-      heroName: "Святозавр",
-    ),
-    ConcreteHero(
-      icon: 'images/hero_3.png',
-      width: 100,
-      heroName: "Макс",
-    ),
-    ConcreteHero(
-      icon: 'images/hero_4.png',
-      width: 100,
-      heroName: "Леонид",
-    ),
-    ConcreteHero(
-      icon: 'images/hero_5.png',
-      width: 100,
-      heroName: "Шэгги",
-    ),
-  ];
-}
-
 class ChooseHeroPage extends StatelessWidget {
+  //get hero list
+  List<StatelessWidget> getListOfHeroes() {
+    List<StatelessWidget> output = [];
+    for (var hero in _heroes) {
+      output.add(ConcreteHero(
+        icon: hero.icon,
+        width: 100,
+        heroName: hero.name,
+        description: hero.description,
+        prophecies: hero.prophecies,
+      ));
+    }
+    return output;
+  }
+  
+  //list of heroes
+  final List<HeroDescription> _heroes;
+  
+  //ctor
+  const ChooseHeroPage(this._heroes, {super.key});
+  
+  //build method
   @override
   Widget build(BuildContext context) {
     return Scaffold(
