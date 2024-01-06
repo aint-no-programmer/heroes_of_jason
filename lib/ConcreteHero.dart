@@ -20,10 +20,12 @@ class ConcreteHero extends StatelessWidget {
   final double width;
 
   final colorizeColors = [
-    Colors.purple,
-    Colors.blue,
-    Colors.yellow,
-    Colors.red,
+    Colors.white,
+    Color.fromRGBO(255, 255, 255, 0.8),
+    Color.fromRGBO(255, 255, 255, 0.6),
+    Color.fromRGBO(255, 255, 255, 0.4),
+    Color.fromRGBO(255, 255, 255, 0.2),
+    Color.fromRGBO(255, 255, 255, 0.0),
   ];
 
   final colorizeTextStyle = TextStyle(
@@ -72,6 +74,14 @@ class ConcreteHero extends StatelessWidget {
                         fit: BoxFit.cover,
                         image: AssetImage(icon),
                       ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.25),
+                          spreadRadius: 0,
+                          blurRadius: 4,
+                          offset: Offset(6, 6), // changes position of shadow
+                        ),
+                      ],
                     ),
                   ),
                   // ),
@@ -81,16 +91,18 @@ class ConcreteHero extends StatelessWidget {
                   child: SizedBox(
                     // width: 250.0,
                     child: Container(
-                      color: Colors.white,
+                      // color: Colors.white,
                       child: AnimatedTextKit(
                         animatedTexts: [
                           ColorizeAnimatedText(
                             heroName,
                             textStyle: colorizeTextStyle,
                             colors: colorizeColors,
+                            speed: const Duration(milliseconds: 400),
                           ),
                         ],
                         isRepeatingAnimation: true,
+                        repeatForever: true,
                       ),
                     ),
                   ),
