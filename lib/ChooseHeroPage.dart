@@ -35,14 +35,15 @@ class ChooseHeroPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/main_background.jpg'),
+            image: AssetImage('images/background.png'),
             fit: BoxFit.fill,
           ),
         ),
         child: GridView.count(
-          crossAxisCount: 3,
-          mainAxisSpacing: 40,
-          // crossAxisSpacing: 0,
+          padding: EdgeInsets.all(10),
+          crossAxisCount: 2,
+          // mainAxisSpacing: 30,
+          crossAxisSpacing: 10,
           children: getListOfHeroes(),
         ),
       ),
