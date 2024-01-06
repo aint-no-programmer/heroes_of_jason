@@ -21,11 +21,11 @@ class HeroPage extends StatelessWidget {
         child: Column(
           children: [
             Flexible(
-              child: Container(
-                padding: const EdgeInsets.all(30),
+              child: Material(
+                child: Container(
+                  // padding: const EdgeInsets.all(30),
                 // margin: const EdgeInsets.all(30),
                 // color: Colors.amberAccent,
-                child: Material(
                   color: Colors.transparent,
                   child: InkWell(
                     onTap: () {
@@ -46,7 +46,7 @@ class HeroPage extends StatelessWidget {
                     },
                     child: Image(
                       image: AssetImage(icon),
-                      fit: BoxFit.contain,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
