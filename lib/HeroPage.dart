@@ -56,9 +56,10 @@ class HeroPage extends StatelessWidget {
               child: Material(
                 child: SingleChildScrollView(
                   child: Container(
-                    padding: const EdgeInsets.all(30),
+                    padding: const EdgeInsets.all(50),
                     // margin: const EdgeInsets.all(30),
-                    color: Colors.amber,
+                    // color: Colors.amber,
+                    color: Colors.white,
                     child: Text(
                       description,
                       textAlign: TextAlign.left,

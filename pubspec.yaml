@@ -71,6 +71,7 @@ flutter:
     - images/start_page.png
     - images/main_background.jpg
     - images/background.png
+    - images/background_dark.png
     - heroes_descriptions/
     - heroes_icons/
     - audio/jason_audio.mp3

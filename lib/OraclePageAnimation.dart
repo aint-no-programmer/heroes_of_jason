@@ -44,7 +44,7 @@ class OraclePageAnimationState extends State<OraclePageAnimation> {
     return widget.prophecies[Random().nextInt(widget.prophecies.length)];
   }
 
-  String prophecy = 's h a k e  m e.';
+  String prophecy = 'ш э й к  м и .';
   bool _visible = true;
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class OraclePageAnimationState extends State<OraclePageAnimation> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/main_background.jpg'),
+              image: AssetImage('images/background.png'),
               fit: BoxFit.fill,
             ),
           ),

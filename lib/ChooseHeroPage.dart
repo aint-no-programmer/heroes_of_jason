@@ -35,7 +35,7 @@ class ChooseHeroPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/background.png'),
+            image: AssetImage('images/background_dark.png'),
             fit: BoxFit.fill,
           ),
         ),
