@@ -4,11 +4,24 @@ import 'package:heroes_of_jason/StartPage.dart';
 import 'ChooseHeroPage.dart';
 import 'OraclePageAnimation.dart';
 import 'DirectoryParser.dart';
+import 'package:flutter/services.dart';
 import 'IntroPage.dart';
 
 Future<void> main() async {
+  //initializing
   WidgetsFlutterBinding.ensureInitialized();
+
+  //get json descriptions
   final heroes = await getAssetFiles();
+
+  //"freeze" portrait orientation
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  //run
   runApp(MyApp(heroes));
 }
 
@@ -22,8 +35,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       routes: {
-        '/ChooseHeroPage':(context) => ChooseHeroPage(_heroes),
-        '/StartPage':(context) => const StartPage(),
+        '/ChooseHeroPage': (context) => ChooseHeroPage(_heroes),
+        '/StartPage': (context) => const StartPage(),
       },
       theme: ThemeData(
         // This is the theme of your application.
