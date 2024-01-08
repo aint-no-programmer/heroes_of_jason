@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'StartPage.dart';
 
 /// Stateful widget to fetch and then display video content.
 class IntroPage extends StatefulWidget {
@@ -15,15 +16,16 @@ class _IntroPageState extends State<IntroPage> {
   @override
   void initState() {
     super.initState();
-    // _controller = VideoPlayerController.networkUrl(Uri.parse(
-    //     'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'))
     _controller = VideoPlayerController.asset('video/jason_intro.mp4')
       ..setVolume(1.0)
       ..addListener(() {
         final bool isPlaying = _controller.value.isPlaying;
         if (isPlaying != _isPlaying) {
           _isPlaying = isPlaying;
-          if (!_isPlaying) print('\n\n Video finished!\n\n');
+          if (!_isPlaying) {
+            print('\n\n Video finished!\n\n');
+            Navigator.pushNamed(context, '/StartPage');
+          }
         }
       })
       ..initialize().then((_) {

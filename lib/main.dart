@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:heroes_of_jason/IntroPage.dart';
+import 'package:heroes_of_jason/StartPage.dart';
 import 'ChooseHeroPage.dart';
 import 'OraclePageAnimation.dart';
 import 'DirectoryParser.dart';
-import 'StartPage.dart';
+import 'IntroPage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       routes: {
         '/ChooseHeroPage':(context) => ChooseHeroPage(_heroes),
+        '/StartPage':(context) => const StartPage(),
       },
       theme: ThemeData(
         // This is the theme of your application.
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: ChooseHeroPage(_heroes),
-      home: const StartPage(),
+      home: const IntroPage(),
     );
   }
 }
