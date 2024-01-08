@@ -44,7 +44,7 @@ class OraclePageAnimationState extends State<OraclePageAnimation> {
     return widget.prophecies[Random().nextInt(widget.prophecies.length)];
   }
 
-  String prophecy = 'ш э й к  м и .';
+  String prophecy = 's h a k e  m e .';
   bool _visible = true;
   @override
   Widget build(BuildContext context) {
