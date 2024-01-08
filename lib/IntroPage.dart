@@ -23,7 +23,6 @@ class _IntroPageState extends State<IntroPage> {
         if (isPlaying != _isPlaying) {
           _isPlaying = isPlaying;
           if (!_isPlaying) {
-            print('\n\n Video finished!\n\n');
             Navigator.pushNamed(context, '/StartPage');
           }
         }
@@ -33,7 +32,6 @@ class _IntroPageState extends State<IntroPage> {
         setState(() {
           _controller.play().then((value) {
             _isPlaying = true;
-            print('\n\nHey!\n\n');
           });
         });
       });
@@ -43,12 +41,17 @@ class _IntroPageState extends State<IntroPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: _controller.value.isInitialized
+        child: InkWell(
+          onTap: () {
+            _controller.pause().then((value) => Navigator.pushNamed(context, '/StartPage'));
+          },
+          child: _controller.value.isInitialized
             ? AspectRatio(
                 aspectRatio: _controller.value.aspectRatio,
                 child: VideoPlayer(_controller),
               )
             : Container(),
+        )
       ),
     );
   }
