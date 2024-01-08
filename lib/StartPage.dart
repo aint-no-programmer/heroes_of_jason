@@ -11,7 +11,7 @@ class StartPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/start_page.png'),
+            image: AssetImage('images/start_page.jpg'),
             fit: BoxFit.fitHeight,
           ),
         ),
@@ -21,16 +21,25 @@ class StartPage extends StatelessWidget {
             padding: EdgeInsets.all(40),
             margin: EdgeInsets.all(20),
             child: Column(
-              // crossAxisAlignment:CrossAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Expanded(
                 //   child: Spacer(),
                 // ),
+                SizedBox(
+                  height: 200,
+                ),
                 OutlinedButton(
                   style: ButtonStyle(
+                    side: MaterialStateProperty.all(
+                      BorderSide(
+                          color: Colors.white,
+                          width: 1.0,
+                          style: BorderStyle.solid),
+                    ),
                     foregroundColor:
-                        MaterialStateProperty.all<Color>(const Color.fromARGB(255, 27, 65, 90)),
+                        MaterialStateProperty.all<Color>(Colors.white),
                   ),
                   onPressed: () {
                     Navigator.pushNamed(context, '/ChooseHeroPage');
@@ -39,18 +48,30 @@ class StartPage extends StatelessWidget {
                 ),
                 OutlinedButton(
                   style: ButtonStyle(
+                    side: MaterialStateProperty.all(
+                      BorderSide(
+                          color: Colors.black,
+                          width: 1.0,
+                          style: BorderStyle.solid),
+                    ),
                     foregroundColor:
-                        MaterialStateProperty.all<Color>(const Color.fromARGB(255, 27, 65, 90)),
+                        MaterialStateProperty.all<Color>(Colors.black),
                   ),
                   onPressed: () {},
                   child: Text('к р е а т о р с'),
                 ),
                 OutlinedButton(
                   style: ButtonStyle(
+                    side: MaterialStateProperty.all(
+                      BorderSide(
+                          color: Colors.black,
+                          width: 1.0,
+                          style: BorderStyle.solid),
+                    ),
                     foregroundColor:
-                        MaterialStateProperty.all<Color>(const Color.fromARGB(255, 27, 65, 90)),
+                        MaterialStateProperty.all<Color>(Colors.black),
                   ),
-                  onPressed: ()=> exit(0),
+                  onPressed: () => exit(0),
                   child: Text('а у т'),
                 ),
                 // Expanded(
