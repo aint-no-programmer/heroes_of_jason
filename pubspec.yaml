@@ -42,6 +42,7 @@ dependencies:
   vibration: ^1.8.4
   logger: ^2.0.2+1
   video_player: ^2.8.2
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +73,7 @@ flutter:
     - images/start_page.jpg
     - images/main_background.jpg
     - images/background.png
+    - images/app_icon.png
     - images/background_dark.png
     - heroes_descriptions/
     - heroes_icons/
@@ -104,3 +106,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_launcher_icons:
+  image_path: "images/app_icon.png"
+  android: true
+  ios: true
