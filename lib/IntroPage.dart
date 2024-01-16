@@ -16,7 +16,7 @@ class _IntroPageState extends State<IntroPage> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('video/jason_intro.mp4')
+    _controller = VideoPlayerController.asset('video/jason_intro_low_quality.mp4')
       ..setVolume(1.0)
       ..addListener(() {
         final bool isPlaying = _controller.value.isPlaying;

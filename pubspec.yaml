@@ -78,7 +78,7 @@ flutter:
     - heroes_descriptions/
     - heroes_icons/
     - audio/jason_audio.mp3
-    - video/jason_intro.mp4
+    - video/jason_intro_low_quality.mp4
 
 
   # asset can refer to one or more resolution-specific "variants", see
