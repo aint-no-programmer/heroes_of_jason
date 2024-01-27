@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       routes: {
         '/ChooseHeroPage': (context) => ChooseHeroPage(_heroes),
-        '/StartPage': (context) => const StartPage(),
+        '/StartPage': (context) => StartPage(),
       },
       theme: ThemeData(
         // This is the theme of your application.

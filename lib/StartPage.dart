@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
+import 'package:just_audio/just_audio.dart';
 
 class StartPage extends StatelessWidget {
-  const StartPage({
+  StartPage({
     super.key,
   });
+  AudioPlayer? _player;
+  void _addAudioPlayer(){
+    if (_player?.playing ?? false) return;
+    _player = AudioPlayer();
+    _player?.setAsset('audio/jason_audio.mp3');
+    _player?.setLoopMode(LoopMode.one);
+    _player?.play();
+  }
   @override
   Widget build(BuildContext context) {
+    _addAudioPlayer();
     return Scaffold(
       body: PopScope(
         canPop: false,
