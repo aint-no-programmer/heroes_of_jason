@@ -10,8 +10,9 @@ class StartPage extends StatelessWidget {
   void _addAudioPlayer(){
     if (_player?.playing ?? false) return;
     _player = AudioPlayer();
-    _player?.setAsset('audio/jason_audio.mp3');
+    _player?.setAsset('audio/background_audio.mp3');
     _player?.setLoopMode(LoopMode.one);
+    _player?.setVolume(0.4);
     _player?.play();
   }
   @override
