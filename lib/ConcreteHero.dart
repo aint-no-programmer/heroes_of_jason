@@ -37,6 +37,7 @@ class ConcreteHero extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
+      height: width,
       child: Hero(
         tag: icon,
         child: Material(
