@@ -62,7 +62,7 @@ class CreatorsPage extends StatelessWidget {
                   children: [
                     ConcreteHero(
                       icon: 'images/creators_alessky.jpg',
-                      width: 150,
+                      width: 200,
                       heroName: 'alessky',
                       description: _alessky_description,
                       prophecies: _alessky_prophecy,
@@ -73,7 +73,7 @@ class CreatorsPage extends StatelessWidget {
                         _alessky_creator_description,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 15.0,
+                          fontSize: 18.0,
                         ),
                       ),
                     ),
@@ -85,7 +85,7 @@ class CreatorsPage extends StatelessWidget {
                   children: [
                     ConcreteHero(
                       icon: 'images/creators_zinke.jpg',
-                      width: 150,
+                      width: 200,
                       heroName: 'J.Zinkevich',
                       description: _zinke_description,
                       prophecies: _zinke_prophecy,
@@ -96,7 +96,7 @@ class CreatorsPage extends StatelessWidget {
                         _zinke_creator_descrition,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 15.0,
+                          fontSize: 18.0,
                         ),
                       ),
                     ),
@@ -108,7 +108,7 @@ class CreatorsPage extends StatelessWidget {
                   children: [
                     ConcreteHero(
                       icon: 'images/creators_koshka.jpg',
-                      width: 150,
+                      width: 200,
                       heroName: 'koshka',
                       description: _koshka_description,
                       prophecies: _koshka_prophecy,
@@ -119,7 +119,7 @@ class CreatorsPage extends StatelessWidget {
                         _koshka_creator_descrition,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 15.0,
+                          fontSize: 18.0,
                         ),
                       ),
                     ),
