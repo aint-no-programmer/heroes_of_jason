@@ -76,6 +76,9 @@ flutter:
     - images/background.png
     - images/app_icon.png
     - images/background_dark.png
+    - images/creators_background.jpg
+    - images/creators_alessky.jpg
+    - images/creators_zinke.jpg
     - heroes_descriptions/
     - heroes_icons/
     - audio/background_audio.mp3
