@@ -70,7 +70,9 @@ class StartPage extends StatelessWidget {
                       foregroundColor:
                           MaterialStateProperty.all<Color>(Colors.black),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/CreatorsPage');
+                    },
                     child: Text('к р е а т о р с'),
                   ),
                   OutlinedButton(

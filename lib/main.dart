@@ -6,6 +6,7 @@ import 'OraclePageAnimation.dart';
 import 'DirectoryParser.dart';
 import 'package:flutter/services.dart';
 import 'IntroPage.dart';
+import 'CreatorsPage.dart';
 
 Future<void> main() async {
   //initializing
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/ChooseHeroPage': (context) => ChooseHeroPage(_heroes),
         '/StartPage': (context) => StartPage(),
+        '/CreatorsPage': (context) => CreatorsPage(),
       },
       theme: ThemeData(
         // This is the theme of your application.
