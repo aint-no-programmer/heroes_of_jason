@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:heroes_of_jason/DirectoryParser.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'ConcreteHero.dart';
 
 class CreatorsPage extends StatelessWidget {
@@ -174,6 +176,40 @@ class CreatorsPage extends StatelessWidget {
                               text: 'Background music',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 50),
+                  Text(
+                    'C O N T A C T S',
+                    style: TextStyle(fontSize: 28, color: Colors.white),
+                  ),
+                  // SizedBox(height: 20),
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    child: Text.rich(
+                      TextSpan(
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: 'J. Zinkevich. Illustrator.\n',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 18)),
+                          TextSpan(
+                              text: 'http://zinkevich-creation.tilda.ws/',
+                              style: TextStyle(
+                                  color: Colors.lightGreen,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: Colors.lightGreen,
+                                  decorationThickness: 2,
+                                  fontSize: 18),
+                              recognizer: new TapGestureRecognizer()
+                                ..onTap = () {
+                                  launchUrl(Uri.parse(
+                                      'http://zinkevich-creation.tilda.ws/'));
+                                }),
                         ],
                       ),
                     ),
